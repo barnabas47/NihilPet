@@ -238,14 +238,10 @@ NihilPet/
 
 ## 🌐 Instant Online Deployment
 
-### Vercel (Recommended 1-Click)
+### Vercel (1-Click Deployment)
 1. Fork or import this repository on [vercel.com](https://vercel.com).
-2. Click **Deploy**. Everything is pre-configured in `vercel.json`.
-
-### GitHub Pages
-1. Go to **Settings** -> **Pages** in your repository.
-2. Under **Build and deployment**, select **GitHub Actions**.
-3. Push to `main` branch to trigger automated deployment via `.github/workflows/deploy.yml`.
+2. Click **Deploy**. Everything is pre-configured with zero setup via [`vercel.json`](file:///c:/Informatika/antigravity_projects/StupidIdeasHackathon/vercel.json).
+3. Play live right now: **[https://nihil-pet.vercel.app](https://nihil-pet.vercel.app)**
 
 ---
 
