@@ -42,15 +42,15 @@ export const LeftHardwarePanel: React.FC<LeftHardwarePanelProps> = ({
         </div>
 
         {/* 2. Cartridge Slot Bay */}
-        <div className="mt-2.5 p-2.5 bg-[#08090c] border border-white/10 rounded-xl">
-          <div className="text-[9px] text-neutral-500 uppercase tracking-widest mb-1.5 flex justify-between">
+        <div className="mt-2 p-2 bg-[#08090c] border border-white/10 rounded-xl">
+          <div className="text-[9px] text-neutral-500 uppercase tracking-widest mb-1 flex justify-between">
             <span>CARTRIDGE BAY</span>
             <span className={isCartridgeInserted ? 'text-emerald-400 font-bold' : 'text-neutral-500'}>
               {isCartridgeInserted ? '[LOCKED]' : '[EMPTY]'}
             </span>
           </div>
 
-          <div className="p-2 bg-[#14171d] border border-white/15 rounded-lg flex items-center justify-between">
+          <div className="p-1.5 bg-[#14171d] border border-white/15 rounded-lg flex items-center justify-between">
             <div className="flex flex-col">
               <span className="text-[10px] font-pixel text-neutral-200">
                 {isCartridgeInserted ? 'NP-9000.ROM' : 'NO CARTRIDGE'}
@@ -65,7 +65,7 @@ export const LeftHardwarePanel: React.FC<LeftHardwarePanelProps> = ({
                 soundEngine.playPoke();
                 onToggleCartridge();
               }}
-              className={`px-2 py-1 text-[9px] font-pixel rounded cursor-pointer transition-all active:scale-95 ${
+              className={`px-2 py-0.5 text-[9px] font-pixel rounded cursor-pointer transition-all active:scale-95 ${
                 isCartridgeInserted
                   ? 'bg-amber-950/80 text-amber-300 border border-amber-600/50 hover:bg-amber-900'
                   : 'bg-emerald-950/80 text-emerald-300 border border-emerald-600/50 hover:bg-emerald-900'
@@ -78,12 +78,12 @@ export const LeftHardwarePanel: React.FC<LeftHardwarePanelProps> = ({
         </div>
 
         {/* 3. Hardware DIP Switches */}
-        <div className="mt-2.5 p-2.5 bg-[#08090c] border border-white/10 rounded-xl space-y-1.5">
+        <div className="mt-2 p-2 bg-[#08090c] border border-white/10 rounded-xl space-y-1">
           <div className="text-[9px] text-neutral-500 uppercase tracking-widest mb-0.5">
             HARDWARE DIP SWITCHES
           </div>
 
-          <label className="flex items-center justify-between cursor-pointer text-[10px] text-neutral-300">
+          <label className="flex items-center justify-between cursor-pointer text-[9.5px] text-neutral-300">
             <span>CRT SCANLINES</span>
             <input
               type="checkbox"
@@ -93,7 +93,7 @@ export const LeftHardwarePanel: React.FC<LeftHardwarePanelProps> = ({
             />
           </label>
 
-          <label className="flex items-center justify-between cursor-pointer text-[10px] text-neutral-300">
+          <label className="flex items-center justify-between cursor-pointer text-[9.5px] text-neutral-300">
             <span>AUDIO CHIPTUNE</span>
             <input
               type="checkbox"
@@ -103,7 +103,7 @@ export const LeftHardwarePanel: React.FC<LeftHardwarePanelProps> = ({
             />
           </label>
 
-          <label className="flex items-center justify-between cursor-pointer text-[10px] text-neutral-300">
+          <label className="flex items-center justify-between cursor-pointer text-[9.5px] text-neutral-300">
             <span>OVERCLOCK OSC</span>
             <input
               type="checkbox"

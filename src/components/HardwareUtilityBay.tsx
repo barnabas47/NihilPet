@@ -208,9 +208,41 @@ export const HardwareUtilityBay: React.FC<HardwareUtilityBayProps> = ({
   // EKG Heart Rate based on despair
   const heartBpm = Math.round(72 + (despair / 100) * 88);
 
+  // Widget Drawer / Menu Popover State
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  // Touch & Mouse Horizontal Drag / Swipe Gesture State
+  const [dragStartX, setDragStartX] = useState<number | null>(null);
+  const [dragOffsetX, setDragOffsetX] = useState<number>(0);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const handlePointerDown = (clientX: number) => {
+    setDragStartX(clientX);
+    setIsDragging(true);
+    setDragOffsetX(0);
+  };
+
+  const handlePointerMove = (clientX: number) => {
+    if (!isDragging || dragStartX === null) return;
+    const diff = clientX - dragStartX;
+    setDragOffsetX(Math.max(-80, Math.min(80, diff)));
+  };
+
+  const handlePointerUp = () => {
+    if (!isDragging || dragStartX === null) return;
+    if (dragOffsetX < -35) {
+      cycleModule(1);
+    } else if (dragOffsetX > 35) {
+      cycleModule(-1);
+    }
+    setIsDragging(false);
+    setDragStartX(null);
+    setDragOffsetX(0);
+  };
+
   return (
-    <div className="my-2 p-2.5 bg-[#0a0c10] border border-white/10 rounded-xl flex flex-col justify-between select-none font-mono">
-      {/* 1. Header with Mode Selector and Carousel Navigation */}
+    <div className="relative my-2 p-2.5 bg-[#0a0c10] border border-white/10 rounded-xl flex flex-col justify-between select-none font-mono shadow-md">
+      {/* 1. Header with Mode Selector, Carousel Navigation & Widget Drawer Trigger */}
       <div className="flex items-center justify-between pb-1.5 border-b border-white/10 text-[9px] text-neutral-400">
         <div className="flex items-center gap-1.5 font-bold uppercase tracking-wider text-emerald-400">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -218,13 +250,23 @@ export const HardwareUtilityBay: React.FC<HardwareUtilityBayProps> = ({
         </div>
 
         <div className="flex items-center gap-1.5">
-          <span className="font-pixel text-[8px] text-neutral-500">
-            {MODULES_INFO[currentModIdx].badge}
-          </span>
+          {/* Quick Drawer Launcher Button */}
+          <button
+            onClick={() => {
+              soundEngine.playBoing();
+              setIsDrawerOpen(!isDrawerOpen);
+            }}
+            className="px-1.5 py-0.2 rounded bg-cyan-950 border border-cyan-500/50 hover:bg-cyan-900 text-cyan-300 font-pixel text-[8px] cursor-pointer transition-all active:scale-95"
+            type="button"
+            title="Open Interactive Widget Library Menu"
+          >
+            {isDrawerOpen ? '[CLOSE]' : '[WIDGETS]'}
+          </button>
+
           <div className="flex items-center gap-0.5">
             <button
               onClick={() => cycleModule(-1)}
-              className="px-1 py-0.2 rounded bg-neutral-800 hover:bg-neutral-700 text-neutral-300 font-pixel text-[8px] cursor-pointer"
+              className="px-1.5 py-0.2 rounded bg-neutral-800 hover:bg-neutral-700 text-neutral-300 font-pixel text-[8px] cursor-pointer"
               type="button"
               title="Previous Hardware Widget"
             >
@@ -232,7 +274,7 @@ export const HardwareUtilityBay: React.FC<HardwareUtilityBayProps> = ({
             </button>
             <button
               onClick={() => cycleModule(1)}
-              className="px-1 py-0.2 rounded bg-neutral-800 hover:bg-neutral-700 text-neutral-300 font-pixel text-[8px] cursor-pointer"
+              className="px-1.5 py-0.2 rounded bg-neutral-800 hover:bg-neutral-700 text-neutral-300 font-pixel text-[8px] cursor-pointer"
               type="button"
               title="Next Hardware Widget"
             >
@@ -242,29 +284,49 @@ export const HardwareUtilityBay: React.FC<HardwareUtilityBayProps> = ({
         </div>
       </div>
 
-      {/* 2. Interactive Module Screens (Height: ~86px) */}
-      <div className="h-[86px] my-1.5 overflow-hidden flex items-center justify-center">
+      {/* 2. Interactive Draggable Widget Stage (Comfortable 105px Height - No Cramping / No Cutoffs!) */}
+      <div
+        className="relative h-[105px] my-1.5 overflow-hidden flex items-center justify-center cursor-grab active:cursor-grabbing touch-pan-y"
+        onMouseDown={(e) => handlePointerDown(e.clientX)}
+        onMouseMove={(e) => handlePointerMove(e.clientX)}
+        onMouseUp={handlePointerUp}
+        onMouseLeave={handlePointerUp}
+        onTouchStart={(e) => handlePointerDown(e.touches[0].clientX)}
+        onTouchMove={(e) => handlePointerMove(e.touches[0].clientX)}
+        onTouchEnd={handlePointerUp}
+        style={{
+          transform: `translateX(${dragOffsetX}px)`,
+          transition: isDragging ? 'none' : 'transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1)',
+        }}
+      >
         {/* MODE 1: WAVE OSCILLOSCOPE */}
         {activeModule === 'scope' && (
-          <div className="w-full h-full bg-[#060a06] border border-emerald-900/60 rounded-lg overflow-hidden shadow-inner">
-            <canvas ref={canvasRef} width={240} height={82} className="w-full h-full object-cover" />
+          <div className="w-full h-full bg-[#060a06] border border-emerald-900/60 rounded-lg overflow-hidden shadow-inner flex flex-col justify-between">
+            <canvas ref={canvasRef} width={260} height={80} className="w-full flex-1 object-cover" />
+            <div className="px-2 py-0.5 bg-black/60 flex justify-between text-[7px] text-emerald-500 font-pixel">
+              <span>FREQ: {turboMode ? '240Hz (TURBO)' : '60Hz'}</span>
+              <span>SWIPE &lt; &gt; TO SWITCH</span>
+            </div>
           </div>
         )}
 
         {/* MODE 2: 8-BIT WORKING POCKET CALCULATOR */}
         {activeModule === 'calc' && (
-          <div className="w-full h-full bg-[#12151d] border border-white/10 rounded-lg p-1.5 flex flex-col justify-between">
-            <div className="bg-[#060a06] border border-emerald-900/50 rounded px-2 py-0.5 text-right font-pixel text-emerald-400 text-xs tracking-wider">
+          <div className="w-full h-full bg-[#12151d] border border-white/10 rounded-lg p-2 flex flex-col justify-between shadow-inner">
+            <div className="bg-[#060a06] border border-emerald-900/50 rounded px-2 py-1 text-right font-pixel text-emerald-400 text-sm tracking-wider">
               {calcInput}
             </div>
-            <div className="grid grid-cols-4 gap-1 text-[8px] font-pixel">
+            <div className="grid grid-cols-4 gap-1 text-[8.5px] font-pixel flex-1 pt-1">
               {['7', '8', '9', '/', '4', '5', '6', '*', '1', '2', '3', '-', '0', 'C', '=', '+'].map((btn) => (
                 <button
                   key={btn}
-                  onClick={() => handleCalcBtn(btn)}
-                  className={`py-0.5 rounded cursor-pointer active:scale-95 text-center transition-all ${
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleCalcBtn(btn);
+                  }}
+                  className={`flex items-center justify-center py-1 rounded cursor-pointer active:scale-90 transition-all ${
                     btn === '='
-                      ? 'bg-emerald-600 text-black font-bold'
+                      ? 'bg-emerald-500 text-black font-bold shadow-[0_0_6px_rgba(16,185,129,0.5)]'
                       : btn === 'C'
                       ? 'bg-rose-900 text-rose-200'
                       : ['+', '-', '*', '/'].includes(btn)
@@ -405,10 +467,67 @@ export const HardwareUtilityBay: React.FC<HardwareUtilityBayProps> = ({
           })}
         </div>
 
-        <span className="font-mono text-[8px] text-neutral-400">
-          BAY: {MODULES_INFO[currentModIdx].badge}
+        <span className="font-mono text-[8px] text-neutral-400 flex items-center gap-1">
+          <span className="opacity-60">SWIPE ↔</span>
+          <span className="text-cyan-400 font-pixel">BAY: {MODULES_INFO[currentModIdx].badge}</span>
         </span>
       </div>
+
+      {/* 4. Drop-in Interactive Widget Drawer Menu (Phone-Style Widget Tray) */}
+      {isDrawerOpen && (
+        <div className="absolute inset-0 bg-[#08090d]/95 backdrop-blur-sm z-30 rounded-xl p-2.5 flex flex-col justify-between border border-cyan-500/40 shadow-2xl animate-in fade-in zoom-in-95 duration-150">
+          <div className="flex items-center justify-between pb-1.5 border-b border-white/10">
+            <span className="font-pixel text-[9px] text-cyan-300 uppercase tracking-wider font-bold">
+              📱 HARDWARE WIDGET TRAY
+            </span>
+            <button
+              onClick={() => setIsDrawerOpen(false)}
+              className="px-1.5 py-0.5 rounded bg-neutral-800 hover:bg-neutral-700 text-neutral-300 font-pixel text-[8px] cursor-pointer"
+              type="button"
+            >
+              ✕
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 gap-1.5 my-1 overflow-y-auto max-h-[110px] pr-0.5">
+            {MODULES_INFO.map((mod) => {
+              const isSelected = mod.id === activeModule;
+              return (
+                <button
+                  key={mod.id}
+                  onClick={() => {
+                    soundEngine.playBoing();
+                    setActiveModule(mod.id);
+                    setIsDrawerOpen(false);
+                  }}
+                  className={`flex items-center justify-between p-1.5 rounded-lg border text-left cursor-pointer transition-all ${
+                    isSelected
+                      ? 'bg-cyan-950/80 border-cyan-400/80 text-cyan-200'
+                      : 'bg-[#12151e] border-white/5 hover:border-white/20 text-neutral-300'
+                  }`}
+                  type="button"
+                >
+                  <div className="flex items-center gap-1.5">
+                    <span
+                      className={`w-2 h-2 rounded-full ${
+                        isSelected ? 'bg-cyan-400 shadow-[0_0_6px_#22d3ee]' : 'bg-neutral-600'
+                      }`}
+                    />
+                    <span className="font-pixel text-[8px]">{mod.label}</span>
+                  </div>
+                  <span className="font-mono text-[7px] text-neutral-500">
+                    [{mod.badge}]
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="pt-1 border-t border-white/10 text-[7px] text-neutral-500 text-center font-pixel">
+            CLICK ANY WIDGET TO MOUNT INTO RACK BAY
+          </div>
+        </div>
+      )}
     </div>
   );
 };
