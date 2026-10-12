@@ -48,11 +48,11 @@ export const RightTelemetryPanel: React.FC<RightTelemetryPanelProps> = ({
           </span>
           <button
             onClick={onOpenAchievements}
-            className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-amber-400/20 border border-amber-400/40 text-amber-300 font-pixel text-[8px] hover:bg-amber-400/30 cursor-pointer transition-all"
+            className="flex items-center gap-1 px-2 py-0.5 rounded bg-amber-400/20 border border-amber-400/40 text-amber-300 font-pixel text-[8px] hover:bg-amber-400/30 cursor-pointer transition-all shrink-0 active:scale-95"
             type="button"
             title="Open Trophy Compendium"
           >
-            <span>[TROPHIES: {unlockedCount}/{totalAchievements}]</span>
+            <span>TROPHIES: {unlockedCount}/{totalAchievements}</span>
           </button>
         </div>
 

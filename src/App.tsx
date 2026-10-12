@@ -53,9 +53,9 @@ export const App: React.FC = () => {
   });
   const [isWardrobeOpen, setIsWardrobeOpen] = useState(false);
 
-  // Background Music (BGM) State (8-Bit Procedural Pokémon Town Loop)
-  const [bgmLevel, setBgmLevel] = useState<number>(0);
-  const [isBgmActive, setIsBgmActive] = useState<boolean>(false);
+  // Background Music (BGM) State (8-Bit Procedural Pokémon Town Loop - Enabled by default)
+  const [bgmLevel, setBgmLevel] = useState<number>(2);
+  const [isBgmActive, setIsBgmActive] = useState<boolean>(true);
 
   const [despair, setDespair] = useState<number>(20);
   const [mood, setMood] = useState<PetMood>('idle');
@@ -277,6 +277,13 @@ export const App: React.FC = () => {
 
     soundEngine.playPoke();
     setIsPoweredOn(true);
+    // Auto-start 8-Bit BGM if audio is enabled
+    if (audioEnabled) {
+      soundEngine.setBgmVolume(0.5);
+      soundEngine.startBgm();
+      setIsBgmActive(true);
+      setBgmLevel(2);
+    }
     setTimeRemainingSeconds(360);
     setTimeSurvivedSeconds(0);
     setDespair(20);
@@ -945,11 +952,11 @@ export const App: React.FC = () => {
 
           <button
             onClick={() => setIsTrophiesModalOpen(true)}
-            className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-400/20 border border-amber-400/50 text-amber-300 font-pixel text-[9px] hover:bg-amber-400/30 cursor-pointer transition-all active:scale-95"
+            className="flex items-center gap-1 px-2 py-1 rounded-lg bg-amber-400/20 border border-amber-400/50 text-amber-300 font-pixel text-[8.5px] hover:bg-amber-400/30 cursor-pointer transition-all active:scale-95 shrink-0"
             type="button"
             title="Open Trophy Compendium"
           >
-            <span>[TROPHIES: {unlockedCount}/{achievements.length}]</span>
+            <span>TROPHIES: {unlockedCount}/{achievements.length}</span>
           </button>
 
           <span className="text-neutral-600">|</span>

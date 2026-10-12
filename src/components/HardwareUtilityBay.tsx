@@ -284,9 +284,9 @@ export const HardwareUtilityBay: React.FC<HardwareUtilityBayProps> = ({
         </div>
       </div>
 
-      {/* 2. Interactive Draggable Widget Stage (Comfortable 105px Height - No Cramping / No Cutoffs!) */}
+      {/* 2. Interactive Draggable Widget Stage (Comfortable 120px Height - No Cramping / No Cutoffs!) */}
       <div
-        className="relative h-[105px] my-1.5 overflow-hidden flex items-center justify-center cursor-grab active:cursor-grabbing touch-pan-y"
+        className="relative h-[120px] my-1.5 overflow-hidden flex items-center justify-center cursor-grab active:cursor-grabbing touch-pan-y"
         onMouseDown={(e) => handlePointerDown(e.clientX)}
         onMouseMove={(e) => handlePointerMove(e.clientX)}
         onMouseUp={handlePointerUp}
@@ -302,7 +302,7 @@ export const HardwareUtilityBay: React.FC<HardwareUtilityBayProps> = ({
         {/* MODE 1: WAVE OSCILLOSCOPE */}
         {activeModule === 'scope' && (
           <div className="w-full h-full bg-[#060a06] border border-emerald-900/60 rounded-lg overflow-hidden shadow-inner flex flex-col justify-between">
-            <canvas ref={canvasRef} width={260} height={80} className="w-full flex-1 object-cover" />
+            <canvas ref={canvasRef} width={260} height={95} className="w-full flex-1 object-cover" />
             <div className="px-2 py-0.5 bg-black/60 flex justify-between text-[7px] text-emerald-500 font-pixel">
               <span>FREQ: {turboMode ? '240Hz (TURBO)' : '60Hz'}</span>
               <span>SWIPE &lt; &gt; TO SWITCH</span>
@@ -312,11 +312,11 @@ export const HardwareUtilityBay: React.FC<HardwareUtilityBayProps> = ({
 
         {/* MODE 2: 8-BIT WORKING POCKET CALCULATOR */}
         {activeModule === 'calc' && (
-          <div className="w-full h-full bg-[#12151d] border border-white/10 rounded-lg p-2 flex flex-col justify-between shadow-inner">
-            <div className="bg-[#060a06] border border-emerald-900/50 rounded px-2 py-1 text-right font-pixel text-emerald-400 text-sm tracking-wider">
+          <div className="w-full h-full bg-[#12151d] border border-white/10 rounded-lg p-1.5 flex flex-col justify-between shadow-inner">
+            <div className="bg-[#060a06] border border-emerald-900/50 rounded px-2 py-0.5 text-right font-pixel text-emerald-400 text-xs tracking-wider shrink-0 mb-1">
               {calcInput}
             </div>
-            <div className="grid grid-cols-4 gap-1 text-[8.5px] font-pixel flex-1 pt-1">
+            <div className="grid grid-cols-4 gap-1 text-[8px] font-pixel flex-1">
               {['7', '8', '9', '/', '4', '5', '6', '*', '1', '2', '3', '-', '0', 'C', '=', '+'].map((btn) => (
                 <button
                   key={btn}
@@ -324,7 +324,7 @@ export const HardwareUtilityBay: React.FC<HardwareUtilityBayProps> = ({
                     e.stopPropagation();
                     handleCalcBtn(btn);
                   }}
-                  className={`flex items-center justify-center py-1 rounded cursor-pointer active:scale-90 transition-all ${
+                  className={`flex items-center justify-center rounded cursor-pointer active:scale-90 transition-all ${
                     btn === '='
                       ? 'bg-emerald-500 text-black font-bold shadow-[0_0_6px_rgba(16,185,129,0.5)]'
                       : btn === 'C'

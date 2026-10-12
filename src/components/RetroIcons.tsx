@@ -47,3 +47,9 @@ export const IconShock: React.FC<{ className?: string }> = ({ className = 'w-4 h
     <path d="M9 1L3 9h5l-2 6 8-9H9l1-5z" />
   </svg>
 );
+
+export const IconTrophy: React.FC<{ className?: string }> = ({ className = 'w-4 h-4' }) => (
+  <svg viewBox="0 0 16 16" fill="currentColor" className={className}>
+    <path d="M3 2h10v3c0 2.2-1.8 4-4 4H7C4.8 9 3 7.2 3 5V2zm-2 1h2v3H1V3zm12 0h2v3h-2V3zm-6 8h2v2H7v-2zm-2 2h6v1H5v-1z" />
+  </svg>
+);

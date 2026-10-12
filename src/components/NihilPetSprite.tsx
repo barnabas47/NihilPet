@@ -160,100 +160,100 @@ export const NihilPetSprite: React.FC<NihilPetSpriteProps> = ({
         )}
 
         {/* --- HAT / COSTUME LAYER --- */}
-        <div className="relative z-20 w-16 h-5 flex items-end justify-center pointer-events-none">
+        <div className="relative z-20 w-18 h-7 flex items-end justify-center pointer-events-none -mb-1">
           {hat === 'beret' && (
-            <div className="relative -mb-1 flex items-center justify-center">
-              <div className="w-12 h-3.5 bg-lcd-pixel-dark rounded-t-full rotate-[-14deg] shadow-sm flex items-center justify-center">
-                <div className="w-1 h-1.5 bg-lcd-pixel-dark -mt-3 rounded-full" />
+            <div className="relative -mb-0.5 flex items-center justify-center">
+              <div className="w-13 h-4 bg-lcd-pixel-dark rounded-t-full rotate-[-12deg] shadow-sm flex items-center justify-center">
+                <div className="w-1 h-1.5 bg-lcd-pixel-dark -mt-3.5 rounded-full" />
               </div>
             </div>
           )}
 
           {hat === 'party' && (
-            <div className="relative -mb-1 flex flex-col items-center">
+            <div className="relative mb-0 flex flex-col items-center">
               <div className="w-1.5 h-1.5 bg-lcd-pixel-mid rounded-full animate-ping" />
-              <div className="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[18px] border-b-lcd-pixel-dark relative">
+              <div className="w-0 h-0 border-l-[7px] border-l-transparent border-r-[7px] border-r-transparent border-b-[18px] border-b-lcd-pixel-dark relative -mt-0.5">
                 <div className="absolute top-2 left-[-3px] w-1.5 h-0.5 bg-lcd-bg rotate-45" />
               </div>
             </div>
           )}
 
           {hat === 'tinfoil' && (
-            <div className="relative -mb-1 flex flex-col items-center">
+            <div className="relative mb-0 flex flex-col items-center">
               <div className="w-0.5 h-2 bg-lcd-pixel-dark animate-pulse" />
               <div className="w-1.5 h-1.5 bg-lcd-pixel-dark rounded-full -mt-0.5" />
-              <div className="w-0 h-0 border-l-[9px] border-l-transparent border-r-[9px] border-r-transparent border-b-[12px] border-b-lcd-pixel-dark" />
+              <div className="w-0 h-0 border-l-[9px] border-l-transparent border-r-[9px] border-r-transparent border-b-[14px] border-b-lcd-pixel-dark" />
             </div>
           )}
 
           {hat === 'clown' && (
-            <div className="relative -mb-1 flex items-end justify-center gap-0.5">
+            <div className="relative mb-0 flex items-end justify-center gap-0.5">
               <div className="w-3.5 h-4 bg-lcd-pixel-mid rounded-full -mr-1" />
-              <div className="w-4 h-5 bg-lcd-pixel-dark rounded-full -mb-1" />
+              <div className="w-4 h-5 bg-lcd-pixel-dark rounded-full -mb-0.5" />
               <div className="w-3.5 h-4 bg-lcd-pixel-mid rounded-full -ml-1" />
             </div>
           )}
 
           {hat === 'cyber' && (
-            <div className="relative -mb-1 flex items-center justify-center">
-              <div className="w-14 h-2 bg-lcd-pixel-dark rounded-xs border-b border-lcd-bg flex items-center justify-center">
-                <span className="text-[6px] font-pixel text-lcd-bg tracking-tighter">VR-404</span>
+            <div className="relative mb-0.5 flex items-center justify-center">
+              <div className="w-15 h-3 bg-lcd-pixel-dark rounded-xs border-b border-lcd-bg flex items-center justify-center shadow-xs">
+                <span className="text-[6.5px] font-pixel text-lcd-bg tracking-tighter">VR-404</span>
               </div>
             </div>
           )}
 
           {hat === 'wizard' && (
-            <div className="relative -mb-1 flex flex-col items-center rotate-6">
+            <div className="relative mb-0 flex flex-col items-center rotate-6">
               <div className="w-1.5 h-1.5 bg-lcd-pixel-mid rotate-45 animate-pulse" />
               <div className="w-0 h-0 border-l-[9px] border-l-transparent border-r-[9px] border-r-transparent border-b-[20px] border-b-lcd-pixel-dark" />
-              <div className="w-14 h-1 bg-lcd-pixel-dark rounded-full -mt-0.5" />
+              <div className="w-15 h-1.5 bg-lcd-pixel-dark rounded-full -mt-0.5" />
             </div>
           )}
 
           {hat === 'pirate' && (
-            <div className="relative -mb-1 flex flex-col items-center">
-              <div className="w-13 h-4 bg-lcd-pixel-dark rounded-t-lg relative flex items-center justify-center">
-                <div className="w-2.5 h-2 bg-lcd-bg rounded-xs flex items-center justify-center">
-                  <span className="text-[6px] font-pixel text-lcd-pixel-dark font-bold leading-none">☠</span>
+            <div className="relative mb-0 flex flex-col items-center">
+              <div className="w-14 h-4.5 bg-lcd-pixel-dark rounded-t-lg relative flex items-center justify-center">
+                <div className="w-3 h-2.5 bg-lcd-bg rounded-xs flex items-center justify-center">
+                  <span className="text-[6.5px] font-pixel text-lcd-pixel-dark font-bold leading-none">☠</span>
                 </div>
               </div>
-              <div className="w-15 h-1 bg-lcd-pixel-dark rounded-full -mt-0.5" />
+              <div className="w-16 h-1.5 bg-lcd-pixel-dark rounded-full -mt-0.5" />
             </div>
           )}
 
           {hat === 'crown' && (
-            <div className="relative -mb-0.5 flex flex-col items-center">
+            <div className="relative mb-0 flex flex-col items-center">
               <div className="flex items-end gap-1">
-                <div className="w-2.5 h-3.5 bg-lcd-pixel-dark rounded-t-xs" />
-                <div className="w-3.5 h-5 bg-lcd-pixel-dark rounded-t-xs flex items-start justify-center pt-0.5">
+                <div className="w-2.5 h-4 bg-lcd-pixel-dark rounded-t-xs" />
+                <div className="w-3.5 h-5.5 bg-lcd-pixel-dark rounded-t-xs flex items-start justify-center pt-0.5">
                   <div className="w-1 h-1 bg-lcd-bg rounded-full" />
                 </div>
-                <div className="w-2.5 h-3.5 bg-lcd-pixel-dark rounded-t-xs" />
+                <div className="w-2.5 h-4 bg-lcd-pixel-dark rounded-t-xs" />
               </div>
-              <div className="w-12 h-1 bg-lcd-pixel-dark" />
+              <div className="w-14 h-1 bg-lcd-pixel-dark" />
             </div>
           )}
 
           {hat === 'vr' && (
-            <div className="relative -mb-0.5 flex flex-col items-center">
-              <div className="w-14 h-3 bg-lcd-pixel-dark rounded-xs flex items-center justify-between px-1 border-t border-lcd-bg">
+            <div className="relative mb-0.5 flex flex-col items-center">
+              <div className="w-15 h-3.5 bg-lcd-pixel-dark rounded-xs flex items-center justify-between px-1 border-t border-lcd-bg shadow-xs">
                 <div className="w-4 h-1.5 bg-lcd-bg rounded-xs animate-pulse" />
                 <div className="w-4 h-1.5 bg-lcd-bg rounded-xs animate-pulse" />
               </div>
-              <div className="w-2 h-0.5 bg-lcd-pixel-mid" />
+              <div className="w-3 h-0.5 bg-lcd-pixel-mid" />
             </div>
           )}
 
           {hat === 'halo' && (
-            <div className="relative -mb-1.5 flex flex-col items-center animate-bounce">
-              <div className="w-11 h-2.5 border-2 border-lcd-pixel-dark rounded-[100%] bg-transparent" />
+            <div className="relative mb-1 flex flex-col items-center animate-bounce">
+              <div className="w-12 h-2.5 border-2 border-lcd-pixel-dark rounded-[100%] bg-transparent" />
             </div>
           )}
 
           {hat === 'astro' && (
-            <div className="relative -mb-1 flex flex-col items-center">
-              <div className="w-14 h-6 border-2 border-lcd-pixel-dark rounded-t-full bg-transparent flex items-center justify-center relative">
-                <div className="w-6 h-3 bg-lcd-pixel-dark/30 rounded-full border border-lcd-pixel-dark flex items-start justify-end pr-0.5 pt-0.5">
+            <div className="relative mb-0 flex flex-col items-center">
+              <div className="w-15 h-6.5 border-2 border-lcd-pixel-dark rounded-t-full bg-transparent flex items-center justify-center relative">
+                <div className="w-7 h-3.5 bg-lcd-pixel-dark/30 rounded-full border border-lcd-pixel-dark flex items-start justify-end pr-0.5 pt-0.5">
                   <div className="w-1 h-1 bg-lcd-bg rounded-full" />
                 </div>
               </div>
