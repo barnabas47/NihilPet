@@ -1,0 +1,320 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Dark Retro Console Background Gradients -->
+    <radialGradient id="bgGlow" cx="50%" cy="40%" r="75%">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="45%" stop-color="#0a0e1a" />
+      <stop offset="100%" stop-color="#030712" />
+    </radialGradient>
+
+    <!-- Aurora Nebulae Gradients -->
+    <radialGradient id="purpleOrb" cx="22%" cy="30%" r="55%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="magentaOrb" cx="80%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#ec4899" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="emeraldOrb" cx="50%" cy="85%" r="45%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Gradient for Main Title Text -->
+    <linearGradient id="neonTitleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="30%" stop-color="#c084fc" />
+      <stop offset="65%" stop-color="#ec4899" />
+      <stop offset="100%" stop-color="#00f2fe" />
+    </linearGradient>
+
+    <!-- Console Shell Gradient -->
+    <linearGradient id="shellGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#312e81" />
+      <stop offset="50%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+
+    <!-- LCD Screen Gradient (Pea Green Retro DMG) -->
+    <linearGradient id="lcdGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9bbc0f" />
+      <stop offset="100%" stop-color="#8bac0f" />
+    </linearGradient>
+
+    <!-- Filter Glows -->
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="neonGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <style>
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.35; transform: scale(1); }
+        50% { opacity: 0.75; transform: scale(1.05); }
+      }
+      @keyframes petBounce {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-7px); }
+      }
+      @keyframes petBlink {
+        0%, 94%, 98%, 100% { opacity: 1; transform: scaleY(1); }
+        96% { opacity: 0.1; transform: scaleY(0.1); }
+      }
+      @keyframes ekgFlow {
+        from { stroke-dashoffset: 800; }
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes blinkCursor {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+      @keyframes scanlineScroll {
+        from { transform: translateY(0); }
+        to { transform: translateY(20px); }
+      }
+      @keyframes particleFloat {
+        0%, 100% { transform: translateY(0) scale(1); opacity: 0.2; }
+        50% { transform: translateY(-12px) scale(1.2); opacity: 0.8; }
+      }
+
+      .pulse-orb { animation: pulseGlow 6s ease-in-out infinite; }
+      .pet-bounce { animation: petBounce 2.4s ease-in-out infinite; }
+      .pet-blink { animation: petBlink 4s infinite; transform-origin: center; }
+      .ekg-line { stroke-dasharray: 800; animation: ekgFlow 4s linear infinite; }
+      .cursor { animation: blinkCursor 1s steps(2, start) infinite; }
+      .particle-1 { animation: particleFloat 4s ease-in-out infinite; }
+      .particle-2 { animation: particleFloat 5.5s ease-in-out infinite 1.5s; }
+      .particle-3 { animation: particleFloat 3.8s ease-in-out infinite 0.8s; }
+    </style>
+  </defs>
+
+  <!-- Deep Canvas Background -->
+  <rect width="100%" height="100%" fill="url(#bgGlow)" rx="16" />
+
+  <!-- Aurora Nebulae Clouds -->
+  <circle cx="260" cy="140" r="340" fill="url(#purpleOrb)" class="pulse-orb" />
+  <circle cx="960" cy="220" r="360" fill="url(#magentaOrb)" class="pulse-orb" style="animation-delay: -3s;" />
+  <circle cx="600" cy="380" r="280" fill="url(#emeraldOrb)" class="pulse-orb" style="animation-delay: -1.5s;" />
+
+  <!-- Subtle Perspective Synth Grid -->
+  <g stroke="rgba(255, 255, 255, 0.04)" stroke-width="1">
+    <line x1="0" y1="360" x2="1200" y2="360" />
+    <line x1="0" y1="380" x2="1200" y2="380" />
+    <line x1="0" y1="400" x2="1200" y2="400" />
+    <!-- Radiating Perspective Lines -->
+    <line x1="600" y1="180" x2="100" y2="420" />
+    <line x1="600" y1="180" x2="320" y2="420" />
+    <line x1="600" y1="180" x2="520" y2="420" />
+    <line x1="600" y1="180" x2="680" y2="420" />
+    <line x1="600" y1="180" x2="880" y2="420" />
+    <line x1="600" y1="180" x2="1100" y2="420" />
+  </g>
+
+  <!-- Ambient Floating Cyber Sparks -->
+  <g fill="#00f2fe">
+    <circle cx="160" cy="80" r="2" class="particle-1" />
+    <circle cx="280" cy="340" r="2.5" class="particle-2" />
+    <circle cx="530" cy="90" r="1.5" class="particle-3" />
+    <circle cx="780" cy="70" r="2" class="particle-1" />
+    <circle cx="1080" cy="120" r="2.5" class="particle-2" />
+    <circle cx="1120" cy="330" r="1.5" class="particle-3" />
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- LEFT: 8-BIT TAMAGOTCHI HARDWARE CONSOLE                   -->
+  <!-- ======================================================== -->
+  <g transform="translate(70, 45)" class="pet-bounce">
+    <!-- Drop Shadow -->
+    <rect x="25" y="25" width="230" height="290" rx="36" fill="#000000" opacity="0.45" filter="url(#softGlow)" />
+
+    <!-- Outer Molded Plastic Case -->
+    <rect x="20" y="20" width="230" height="290" rx="36" fill="url(#shellGrad)" stroke="#6366f1" stroke-width="2.5" />
+    
+    <!-- Outer Plastic Bevel Highlight -->
+    <rect x="24" y="24" width="222" height="282" rx="32" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" />
+
+    <!-- Top Keyring Loop -->
+    <circle cx="135" cy="10" r="14" fill="none" stroke="#6366f1" stroke-width="4" />
+    <circle cx="135" cy="10" r="7" fill="#090d16" />
+
+    <!-- Speaker Grille Slots -->
+    <line x1="45" y1="52" x2="80" y2="52" stroke="#4338ca" stroke-width="3" stroke-linecap="round" />
+    <line x1="45" y1="60" x2="80" y2="60" stroke="#4338ca" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Power LED -->
+    <circle cx="215" cy="55" r="4.5" fill="#ef4444" filter="url(#softGlow)" />
+    <circle cx="215" cy="55" r="2" fill="#ffffff" />
+
+    <!-- Screen Bezel Outer Frame -->
+    <rect x="42" y="80" width="186" height="145" rx="14" fill="#0f172a" stroke="#334155" stroke-width="2" />
+    
+    <!-- Screen Header Text -->
+    <text x="135" y="97" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="9" fill="#64748b" font-weight="700" letter-spacing="2" text-anchor="middle">NIHIL PET 9000</text>
+
+    <!-- Retro DMG Pea Green LCD Matrix -->
+    <rect x="52" y="105" width="166" height="110" rx="6" fill="url(#lcdGrad)" stroke="#306230" stroke-width="2" />
+
+    <!-- Subtle LCD Scanlines -->
+    <g stroke="#8bac0f" stroke-width="1" opacity="0.6">
+      <line x1="52" y1="120" x2="218" y2="120" />
+      <line x1="52" y1="135" x2="218" y2="135" />
+      <line x1="52" y1="150" x2="218" y2="150" />
+      <line x1="52" y1="165" x2="218" y2="165" />
+      <line x1="52" y1="180" x2="218" y2="180" />
+      <line x1="52" y1="195" x2="218" y2="195" />
+      <line x1="52" y1="210" x2="218" y2="210" />
+    </g>
+
+    <!-- LCD Top Status Bar -->
+    <text x="60" y="118" font-family="'JetBrains Mono', monospace" font-size="8" fill="#0f380f" font-weight="bold">ENTROPY 42%</text>
+    <text x="210" y="118" font-family="'JetBrains Mono', monospace" font-size="8" fill="#0f380f" font-weight="bold" text-anchor="end">♥ 120</text>
+
+    <!-- 8-Bit Pixel Creature (Cat/Void Pet) -->
+    <g transform="translate(108, 130)" fill="#0f380f">
+      <!-- Ears -->
+      <rect x="8" y="0" width="8" height="8" />
+      <rect x="40" y="0" width="8" height="8" />
+      <rect x="4" y="6" width="12" height="6" />
+      <rect x="40" y="6" width="12" height="6" />
+      
+      <!-- Head & Body Block -->
+      <rect x="8" y="12" width="40" height="28" />
+      <rect x="4" y="18" width="48" height="18" />
+      <rect x="0" y="22" width="56" height="12" />
+
+      <!-- Blinking Eyes -->
+      <g class="pet-blink">
+        <rect x="14" y="20" width="8" height="8" fill="#9bbc0f" />
+        <rect x="34" y="20" width="8" height="8" fill="#9bbc0f" />
+        <rect x="16" y="22" width="4" height="4" fill="#0f380f" />
+        <rect x="36" y="22" width="4" height="4" fill="#0f380f" />
+      </g>
+
+      <!-- Mouth / Mustache -->
+      <rect x="24" y="30" width="8" height="4" />
+      <rect x="20" y="32" width="4" height="2" />
+      <rect x="32" y="32" width="4" height="2" />
+
+      <!-- Paws -->
+      <rect x="6" y="40" width="10" height="8" />
+      <rect x="40" y="40" width="10" height="8" />
+      <rect x="22" y="40" width="12" height="6" />
+    </g>
+
+    <!-- LCD Bottom Warning -->
+    <text x="135" y="208" font-family="'JetBrains Mono', monospace" font-size="8" fill="#0f380f" font-weight="bold" text-anchor="middle">[ ! QTE READY ! ]</text>
+
+    <!-- 3 Hardware Buttons: A, B, C -->
+    <g transform="translate(68, 245)">
+      <!-- Button A -->
+      <circle cx="20" cy="20" r="15" fill="#475569" stroke="#1e293b" stroke-width="2" />
+      <circle cx="20" cy="20" r="12" fill="#e11d48" />
+      <text x="20" y="47" font-family="'JetBrains Mono', monospace" font-size="9" fill="#94a3b8" font-weight="bold" text-anchor="middle">A:FEED</text>
+
+      <!-- Button B -->
+      <circle cx="68" cy="28" r="15" fill="#475569" stroke="#1e293b" stroke-width="2" />
+      <circle cx="68" cy="28" r="12" fill="#8b5cf6" />
+      <text x="68" y="55" font-family="'JetBrains Mono', monospace" font-size="9" fill="#94a3b8" font-weight="bold" text-anchor="middle">B:JOLT</text>
+
+      <!-- Button C -->
+      <circle cx="116" cy="20" r="15" fill="#475569" stroke="#1e293b" stroke-width="2" />
+      <circle cx="116" cy="20" r="12" fill="#06b6d4" />
+      <text x="116" y="47" font-family="'JetBrains Mono', monospace" font-size="9" fill="#94a3b8" font-weight="bold" text-anchor="middle">C:VOID</text>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- RIGHT: EDITORIAL HEADLINE & BADGES                       -->
+  <!-- ======================================================== -->
+  <g transform="translate(370, 50)">
+    <!-- Category Pill Badge -->
+    <g transform="translate(0, 10)">
+      <rect x="0" y="0" width="370" height="30" rx="15" fill="rgba(139, 92, 246, 0.15)" stroke="rgba(139, 92, 246, 0.4)" stroke-width="1.5" />
+      <circle cx="16" cy="15" r="5" fill="#a855f7" filter="url(#softGlow)" />
+      <text x="32" y="20" font-family="'JetBrains Mono', 'Segoe UI', monospace" font-size="11" fill="#c084fc" font-weight="bold" letter-spacing="1.2">
+        👾 RETRO CONSOLE • EXISTENTIAL TAMAGOTCHI
+      </text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="98" font-family="'Inter', 'Segoe UI', system-ui, sans-serif" font-size="54" font-weight="900" fill="url(#neonTitleGrad)" letter-spacing="-1.5">
+      NihilPet 9000
+    </text>
+
+    <!-- Subtitle / Tagline -->
+    <text x="0" y="134" font-family="'Inter', 'Segoe UI', system-ui, sans-serif" font-size="17" fill="#cbd5e1" font-weight="500">
+      Cursed 8-Bit Virtual Pet Simulation Running in an Entropy-Driven Console
+    </text>
+    <text x="0" y="158" font-family="'JetBrains Mono', monospace" font-size="13" fill="#94a3b8">
+      Zero install • Pure Web Audio synthesis • Hardware bays • 16 Trophies
+    </text>
+
+    <!-- Live Status Indicators Row -->
+    <g transform="translate(0, 185)">
+      <!-- Vercel Live Button Pill -->
+      <a href="https://nihil-pet.vercel.app" target="_blank">
+        <rect x="0" y="0" width="180" height="36" rx="18" fill="rgba(16, 185, 129, 0.2)" stroke="#10b981" stroke-width="1.5" />
+        <circle cx="20" cy="18" r="4.5" fill="#10b981" filter="url(#softGlow)" />
+        <text x="36" y="23" font-family="'JetBrains Mono', monospace" font-size="12" fill="#34d399" font-weight="bold">PLAY LIVE ONLINE ↗</text>
+      </a>
+
+      <!-- QTE Engine Badge -->
+      <g transform="translate(195, 0)">
+        <rect x="0" y="0" width="165" height="36" rx="18" fill="rgba(236, 72, 153, 0.15)" stroke="#ec4899" stroke-width="1.5" />
+        <text x="18" y="23" font-family="'JetBrains Mono', monospace" font-size="12" fill="#f472b6" font-weight="bold">⚡ QTE CRISES: 4 TYPES</text>
+      </g>
+
+      <!-- Web Audio Synth Badge -->
+      <g transform="translate(375, 0)">
+        <rect x="0" y="0" width="190" height="36" rx="18" fill="rgba(6, 182, 212, 0.15)" stroke="#06b6d4" stroke-width="1.5" />
+        <text x="18" y="23" font-family="'JetBrains Mono', monospace" font-size="12" fill="#22d3ee" font-weight="bold">🎶 8-BIT AUDIO SYNTH</text>
+      </g>
+
+      <!-- 16 Achievements Badge -->
+      <g transform="translate(580, 0)">
+        <rect x="0" y="0" width="160" height="36" rx="18" fill="rgba(245, 158, 11, 0.15)" stroke="#f59e0b" stroke-width="1.5" />
+        <text x="18" y="23" font-family="'JetBrains Mono', monospace" font-size="12" fill="#fbbf24" font-weight="bold">🏆 16 TROPHIES</text>
+      </g>
+    </g>
+
+    <!-- Mini Telemetry Oscilloscope Box -->
+    <g transform="translate(0, 245)">
+      <rect x="0" y="0" width="750" height="60" rx="12" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+      
+      <!-- Oscilloscope Line Label -->
+      <text x="16" y="24" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748b" font-weight="bold">SOMATIC_EKG // OSCILLOSCOPE STREAM</text>
+      <text x="730" y="24" font-family="'JetBrains Mono', monospace" font-size="10" fill="#10b981" font-weight="bold" text-anchor="end">SYS_STATUS: NOMINAL (PULSE: 78 BPM)</text>
+
+      <!-- Animated Green EKG Waveform -->
+      <path d="M 16 44 L 160 44 L 180 44 L 195 28 L 210 52 L 225 34 L 240 44 L 380 44 L 400 44 L 415 28 L 430 54 L 445 36 L 460 44 L 600 44 L 620 44 L 635 28 L 650 52 L 665 34 L 680 44 L 734 44" 
+            fill="none" 
+            stroke="#10b981" 
+            stroke-width="2" 
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="ekg-line"
+            filter="url(#softGlow)" />
+    </g>
+
+    <!-- Interactive Terminal Command Prompt -->
+    <g transform="translate(0, 325)">
+      <text x="0" y="16" font-family="'JetBrains Mono', monospace" font-size="12" fill="#00f2fe" font-weight="bold">
+        nihil@console:~$ <tspan fill="#e2e8f0">curl -s https://nihil-pet.vercel.app | spawn --entropy=countdown</tspan><tspan fill="#ec4899" class="cursor">█</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- Frame Outer Thin Cyber Border -->
+  <rect x="1" y="1" width="1198" height="418" rx="15" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" />
+</svg>
