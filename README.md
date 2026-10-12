@@ -3,8 +3,14 @@
 > **"A cursed 8-bit virtual pet running in a molded GameBoy shell that suffers from entropy, triggers urgent arcade quick-time emergencies, and features interactive modular hardware bays."**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](https://opensource.org/licenses/MIT)
-[![Deploy: GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-success.svg)](https://barnabas47.github.io/NihilPet/)
-[![Vercel Ready](https://img.shields.io/badge/Vercel-Ready-black.svg)](https://vercel.com)
+[![Play Live Online](https://img.shields.io/badge/PLAY%20LIVE-nihil--pet.vercel.app-00dfa2.svg?style=for-the-badge&logo=vercel)](https://nihil-pet.vercel.app)
+[![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-blue.svg)](https://barnabas47.github.io/NihilPet/)
+
+---
+
+## 🕹️ Play Now Online (Zero Install!)
+
+👉 **[https://nihil-pet.vercel.app](https://nihil-pet.vercel.app)** — *Playable instantly in any web browser without installation!*
 
 ---
 
