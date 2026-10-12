@@ -1,116 +1,95 @@
-# 👾 NihilPet 9000 — Existential Tamagotchi
+# 👾 NihilPet 9000 — Existential Retro Virtual Pet Console
 
-> **"A pixel-art virtual pet that suffers from crippling existential dread and deletes its own CSS styles when it realizes the universe is meaningless."**
+> **"A cursed 8-bit virtual pet running in a molded GameBoy shell that suffers from entropy, triggers urgent arcade quick-time emergencies, and features interactive modular hardware bays."**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](https://opensource.org/licenses/MIT)
-[![Hackathon: Stupid Ideas Ottawa F26](https://img.shields.io/badge/Hackathon-Stupid%20Ideas%20Ottawa%20F26-cyan.svg)](https://stupideas-ottawa-f26.devpost.com/)
-[![Tracks Targeted: 5 Awards](https://img.shields.io/badge/Tracks%20Targeted-General%20Stupidest%20%E2%80%A2%20Stupidest%20AI%20%E2%80%A2%20Button%20%E2%80%A2%20Metric%20%E2%80%A2%20API-f72585.svg)](#)
+[![Deploy: GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-success.svg)](https://barnabas47.github.io/NihilPet/)
+[![Vercel Ready](https://img.shields.io/badge/Vercel-Ready-black.svg)](https://vercel.com)
 
 ---
 
-## ⚡ The 30-Second Wow Factor (Judge Pitch)
+## 🎮 Live Game Overview
 
-1. **Retro Hardware Shell**: An animated 8-bit Tamagotchi named **Nihil-chan** living inside a molded GameBoy/Eggshell casing with pea-green dot-matrix LCD, scanlines, and tactile hardware buttons.
-2. **Dynamic CSS Self-Destruction**: When you press *"Contemplate Void"* or push the forbidden *"DOOM"* button, Nihil-chan actively strips the web page's stylesheet in real-time — modern sans-serif fonts revert to Times New Roman, borders turn into dashed outlines, boxes misalign, and UI elements vanish with 8-bit particle glitch effects!
-3. **Pure Web Audio 8-Bit Chiptune Synthesizer**: Zero external audio files; pure square, sawtooth, and triangle wave synthesis for bleeps, melancholy descending drones, alarms, and fanfare.
-4. **1-Click Judge 30s Auto-Demo**: Floating sticky button that runs a complete theatrical stage demonstration for judges Afaq, Ken, and the team in under 30 seconds!
-5. **Emergency Purpose / Cat Video**: Instant salvation! Plays victory chiptune trumpets, showers pixel confetti, and restores full CSS layout.
+**NihilPet 9000** is a complete, single-screen desktop retro console simulation built with React, TypeScript, Tailwind CSS, and pure Web Audio API synthesis (zero external audio assets).
 
----
+### ⚡ Core Arcade Mechanics & Features
 
-## 🎯 Targeted Prize Tracks & Specific Mechanics
+1. **⏱️ Strict Entropy Countdown Session (6-Minute Operational Budget)**:
+   - Starts with CRT fuzz, static RF noise canvas, and hardware power ignition switch.
+   - Survival score climbs continuously (+15 PTS/sec) with bonus multipliers for defusing events.
+   - Session ends before 10 minutes in either **Pixel Nirvana** (if entropy is balanced <= 15%) or **Entropy Collapse** with an autopsy dossier!
 
-| Prize Track | Implemented Feature | Why It's Gloriously Stupid |
-| :--- | :--- | :--- |
-| 👑 **General Stupidest** ($500 CAD) | **Self-Deleting CSS & Chaos Engine** | A web app whose main feature is actively destroying its own frontend CSS, spawning digital cockroaches, forcing Comic Sans, and spinning a Wheel of Arbitrary Misfortune. |
-| 🤖 **Stupidest AI** | **NihilPet Brain + Animal Crossing Voice** | An AI agent powered by Gemini Flash that cites Sartre, babbles in pitch-randomized 8-bit syllables, and experiences dizziness (`@_@`) when poked repeatedly. |
-| 🔘 **Stupidest Button** | **The Doomsday & Judge Bribe Buttons** | The forbidden DOOM button triggers BSOD exception `0x0000DEAD`, while the *"Bribe Judges with $500 Monopoly CAD"* button showers green cash confetti with casino chimes! |
-| 📊 **Stupidest Metric** | **Useless Metrics Bento & $NIHIL Crypto** | Tracks **Void Proximity** (parsecs fluctuating on mouse move), **Finger Energy Wasted** (in micro-Joules), and the **$NIHIL Crypto Despair Index** (spot price: $0.000000042 CAD). |
-| 🔌 **Stupidest API** ($67 CAD) | **Interactive REST Explorer** | Built-in test runner for `/api/v1/nihilism/status`, `/api/v1/nihilism/excuse` (thermodynamically justified standup excuses), and `/api/v1/nihilism/css-destroyer`. |
+2. **⚡ Urgent Quick-Time Events (QTE Engine)**:
+   - Random arcade reflex crises trigger every 20–30 seconds with urgent progress bars and countdown alarms:
+     - **🍕 Ravenous Starvation**: Spam the **FEED** button 5 times within 4.5s or suffer **-22s** clock penalty!
+     - **🤢 Asphyxiation Choke**: Rapidly Heimlich-poke 4 times within 4.0s or lose **-20s**!
+     - **⚡ 3.3V Short Circuit**: Instantly hit **JOLT** to ground the arc within 3.5s or lose **-25s**!
+     - **🌀 Dimensional Tear**: Hit **VOID** to anchor the continuum within 3.5s or lose **-18s**!
+   - Successfully defusing a QTE rewards **+15s** entropy life and **+1,200 points**!
 
----
+3. **🎛️ Left Modular Hardware Accessory Bay**:
+   - Interactive selector dots toggle between 5 distinct vintage tools:
+     - **Wave Oscilloscope**: Real-time synthesized sine wave with frequency tied to pet entropy.
+     - **8-Bit Pocket Calculator**: Fully functional retro LCD arithmetic machine with sound effects and easter-egg bonuses.
+     - **Global Weather Radar**: Live real-time atmospheric data fetched from Open-Meteo API.
+     - **Cursed Crypto Ticker**: Real-time fluctuating $NIHIL / $VOID market prices with a `[BUY DIP]` button.
+     - **Somatic EKG Monitor**: Real-time heartbeat waveform and live BPM pulse calculator.
 
-## 🎪 Chaotic & Absurd Random Features
+4. **🎩 Bezel SELECT Wardrobe & Customization Modal**:
+   - **12 Achievement-Gated Skins**: Beret, Party Cone, Tinfoil, Clown, Cyber VR, Wizard, Pirate, Crown, Astronaut, Angel Halo, etc.
+   - **Pet Renaming**: Set any custom identifier saved to localStorage.
+   - **6 Retro LCD Color Palettes**: GameBoy DMG Pea Green, GameBoy Pocket Gray, Virtual Boy Red, Cyberpunk Blue, Amber CRT, and Matrix Emerald.
 
-1. **🎰 The Wheel of Arbitrary Misfortune (Cosmic Roulette)**:
-   - Spin the 8-bit roulette for 8 random outcomes: *Digital Cockroach Outbreak*, *Comic Sans Contagion*, *Gravitational Vertigo (Screen Tilt)*, *Kafkaesque Form 27-B Audit*, *Pixel Pizza Rain*, *$NIHIL Airdrop*, *Nietzsche Sunglasses*, and *Quackus Summoning*.
-2. **🦆 Quackus The Absurd (Existential Rubber Duck)**:
-   - Floating interactive 8-bit duck that quacks via Web Audio synthesis and dispenses unsolicited existential programming advice.
-3. **🪙 $NIHIL Crypto Despair Index**:
-   - Spot price crashes 99.9% every few seconds; includes a *"Mine 100 $NIHIL with Despair"* button that burns your real-world finger kinetic energy.
-4. **📋 Kafkaesque Bureaucracy Form 27-B / Sub-6**:
-   - Popup audit requesting justification for consuming CPU cycles on localhost, completed with a giant red **[ APPROVED STUPID ]** rubber stamp.
-5. **🪲 Digital Cockroaches Outbreak**:
-   - Scurrying memory-leak bugs crawl across the DOM; click to squish them with cartoon boing sounds!
-6. **🎩 Wearable Existential Costumes**:
-   - Switch Nihil-chan's outfit instantly: French Philosopher Beret (with baguette), Party Cone Hat, Anti-Telepathy Tinfoil Pyramid, or Clown Hair!
-7. **🗣️ Animal Crossing 8-bit Speech Babbling**:
-   - Nihil-chan speaks with rapid randomized chiptune pitch syllables whenever dialogue updates.
+5. **🎶 8-Bit Chiptune BGM Synthesizer**:
+   - Algorithmic, royalty-free Pokémon-style retro town melody synthesized on-the-fly via Web Audio API oscillators with independent multi-level volume control.
 
----
-
-## 🏗️ Architecture & Technology
-
-```mermaid
-graph TD
-    User([👤 Judge / User]) -->|Pokes / Chats / Pushes Buttons| PetUI[Tamagotchi 8-Bit Shell]
-    PetUI -->|Streaming Dialogue| GeminiAI[AI Existential Reasoning Engine]
-    GeminiAI -->|Nihilism Score + Speech| StateEngine[Pet State Machine]
-    StateEngine -->|Synthesize Chiptune| WebAudio[8-Bit Web Audio Synth]
-    StateEngine -->|Despair > Threshold| CSSMutator[Dynamic CSS Decay Engine]
-    CSSMutator -->|Strip Styles & Glitch DOM| PetUI
-    StateEngine -->|Feed Telemetry| Inspector[Live AI Inspector Drawer]
-    StateEngine -->|Update Bento Stats| Metrics[Useless Metrics Grid]
-    APIClient([External Curl / Fetch]) -->|GET /api/nihilism/status| StupidAPI[Stupid REST Endpoints]
-```
-
-- **Frontend**: React 18 + TypeScript + Vite
-- **Styling**: Tailwind CSS + Dynamic DOM Class Mutator + CRT scanline filters
-- **Audio Engine**: Pure Web Audio API (custom oscillator & gain synthesis)
-- **UI Components**: Google Stitch Obsidian Design System tokens + Central Lego Vault (`live-ai-inspector`, `bento-metric-grid`, `hero-mesh-background`)
+6. **🏆 Trophy Compendium (16 Unlockable Achievements)**:
+   - Persistent trophies with pop-up steam/console toasts and a compendium modal with progress reset capabilities.
 
 ---
 
-## 🚀 Quickstart (Run Locally in 10 Seconds)
+## 🚀 Quick Start & Development
 
-### 🖱️ 1-Click Indítás (Windows)
-Csak kattints duplán a gyökérkönyvtárban lévő **`start.bat`** fájlra! 
-Ez automatikusan:
-1. Ellenőrzi a függőségeket (`npm install`, ha szükséges)
-2. Megnyitja a böngészőt a `http://localhost:3000` címen
-3. Elindítja a Vite dev szervert
+### 1. Prerequisites
+- Node.js 18+ & npm
 
----
-
-### 💻 Parancssorból:
+### 2. Run Locally
 ```bash
-# 1. Függőségek telepítése
+# Clone the repository
+git clone https://github.com/barnabas47/NihilPet.git
+cd NihilPet
+
+# Install dependencies
 npm install
 
-# 2. Vite szerver indítása
+# Start Vite dev server
 npm run dev
+# Or double click start.bat on Windows
+```
 
-# 3. Böngészőben nyisd meg: http://localhost:3000
-# 4. Kattints a fejlécben lévő '⚡ Judge 30s Auto-Demo' gombra a show-hoz!
+Open `http://localhost:3000` in your browser.
+
+### 3. Production Build
+```bash
+npm run build
 ```
 
 ---
 
-## 📝 Friction Log & Developer Feedback (+10% Bonus)
+## 🌐 Instant Free Online Deployment
 
-### Friction Log Entry: Web Audio API Oscillator Lifecycle
-- **Task Attempted**: Real-time generation of multi-note descending nihilistic arpeggios on button clicks.
-- **Steps Taken**: Created dynamic `OscillatorNode` and `GainNode` instances mapped to user DOM interactions.
-- **Actual Behavior**: Browsers enforce user-gesture activation policies before `AudioContext` can leave `suspended` state.
-- **Workaround Applied**: Implemented lazy `AudioContext.resume()` on the first tactile button click.
-- **Developer Suggestion**: Provide a standardized declarative Web Audio API React hook in the browser specs.
+### Option A: GitHub Pages (Automatic)
+This repository includes a ready-to-run GitHub Actions workflow (`.github/workflows/deploy.yml`):
+1. In your GitHub repository, navigate to **Settings** -> **Pages**.
+2. Under **Build and deployment** -> **Source**, select **GitHub Actions**.
+3. Any push to `main` will automatically build and publish your game to `https://barnabas47.github.io/NihilPet/`.
+
+### Option B: Vercel (1-Click)
+1. Go to [vercel.com](https://vercel.com) and click **Add New** -> **Project**.
+2. Select `NihilPet` from your GitHub repositories.
+3. Click **Deploy** (zero configuration needed; `vercel.json` and relative paths are already pre-configured).
 
 ---
 
-## 🎬 3-Minute Video Pitch Script (For Devpost Submission)
-
-- **[0:00 - 0:30] The Hook**: Start on the retro green LCD screen. Show Nihil-chan staring blankly. Click *"Contemplate Void"*. Show the CSS actively dissolving to Times New Roman and gray despair.
-- **[0:30 - 1:15] The Buttons & AI**: Poke Nihil-chan (hear the 8-bit squeak). Type *"Why did you fail to run tests?"* into the Mindstream whisper bar. Show the AI response: *"Why run tests when thermodynamic entropy ensures all servers cool to absolute zero?"*
-- **[1:15 - 2:00] Useless Metrics & Stupid API**: Demonstrate the Void Proximity dial moving with the mouse, and execute the `/api/v1/nihilism/excuse` endpoint in the API explorer.
-- **[2:00 - 2:30] The Doomsday Button**: Press the forbidden DOOM button. Blue Screen of Despair (BSOD) triggers with fatal exception `0x0000DEAD`.
-- **[2:30 - 3:00] The Grand Finale**: Click *"Emergency Purpose / Cat Video"*. Web Audio victory chiptune fanfare erupts, confetti bursts across the screen, CSS re-hydrates into glorious cyber neon. Show the Live AI Inspector telemetry.
+## 📜 License
+MIT License. Created for the NihilPet 9000 project.
